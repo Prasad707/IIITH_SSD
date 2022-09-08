@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>
+           Student Record
+        </title>
+           <style>
+                .cont {
+            background-image:url("https://thumbs.dreamstime.com/b/blue-rich-mottled-simple-background-shading-edges-blue-rich-mottled-simple-background-shading-edges-204695552.jpg");
+  font-family: arial;
+  font-size: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 650px;
+  height: 550px;
+  border-radius: 25px;
+  outline: dashed 2px black;
+  text-align: center;
+}
+body{
+    background-image: linear-gradient(to right, #DECBA4, #3E5151);
+}
+          
+            </style>
+            <script>
+                function myCreateFunction(e) {
+                    e.preventDefault();
+  var table = document.getElementById("myTable");
+  var form =document.getElementById("my Form");
+  var tableLength=table.rows.length;
+  var row = table.insertRow(tableLength);
+  var cell1 = row.insertCell(0);
+  cell1.innerHTML = form.elements.item(0).value;
+  var cell2 = row.insertCell(1);
+  
+  cell2.innerHTML = form.elements.item(1).value;
+  form.result();
+}
+            </script>
+
+       
+    </head>
+    <body>
+      
+      <div class="cont">
+        <h1>STUDENT RECORDS</h1>
+        <center>
+        <form onsubmit="myCreateFunction(e)" id="myForm">
+            <label for="RolNo"></label>
+        <input type="text" id="RollNo" name="RolNo" placeholder="Roll No">
+        <label for="Name"></label>
+        <input type="text" id="Name" name="Name" placeholder="Student Name">
+        <input type="submit" value="Add New" style="background-color:green" >
+        </form>
+       </center>
+       <center>
+     <table border="1" id="myTable">
+        <tr bgcolor="yellow">
+          <th>Roll No. </th>
+          <th>Student Name</th>
+        </tr>
+       
+      </table> 
+      <input type="button" value="Delete Last Record" style="background-color:Red" >
+    </center>
+      </div>
+
+    </body>
+</html>
